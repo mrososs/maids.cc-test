@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserFilterService } from '../shared.service';
+import { LoaderService } from '../../loader/loader.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { UserFilterService } from '../shared.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private userFilterService: UserFilterService) {}
+  constructor(private userFilterService: UserFilterService,public loaderService:LoaderService) {}
 
   onSearch(event: Event) {
     const target = event.target as HTMLInputElement;
