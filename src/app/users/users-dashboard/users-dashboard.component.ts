@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { UsersService } from '../users.service';
 import { UserFilterService } from '../../shared/shared.service';
@@ -25,21 +25,11 @@ export class UsersDashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.userFilterService.searchTerm$.subscribe((term) => {
+      this.searchTerm = term;
+      this.loadUsers(this.currentPage);
+    });
     this.loadUsers(this.currentPage);
-    this.filteredUsers$ = this.userFilterService.searchTerm$.pipe(
-      switchMap((term) => {
-        this.searchTerm = term;
-        return this.users$.pipe(
-          map((users) =>
-            users.filter((user) =>
-              `${user.first_name} ${user.last_name}`
-                .toLowerCase()
-                .includes(this.searchTerm.toLowerCase())
-            )
-          )
-        );
-      })
-    );
   }
 
   loadUsers(page: number) {
@@ -48,6 +38,16 @@ export class UsersDashboardComponent implements OnInit {
         this.totalUsers = response.total;
         return response.data; // return the array of users
       })
+    );
+
+    this.filteredUsers$ = this.users$.pipe(
+      map((users) =>
+        users.filter((user) =>
+          `${user.first_name} ${user.last_name}`
+            .toLowerCase()
+            .includes(this.searchTerm.toLowerCase())
+        )
+      )
     );
   }
 
