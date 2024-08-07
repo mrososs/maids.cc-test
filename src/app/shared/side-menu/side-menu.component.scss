@@ -1,0 +1,37 @@
+.sidebar {
+   
+  button {
+    font-weight: 500;
+    margin-left: 30%;
+  }
+  height: 100%;
+  width: 100%; // Sidebar width
+  background-color: #f8f9fa;
+  padding-top: 50%;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  //   &.open {
+  //     transform: translateX(0); // Show when open
+  //   }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      span {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: light;
+        margin-left: 1rem;
+        color: #333;
+
+        &:hover {
+          color: #007bff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
