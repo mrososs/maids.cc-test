@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { UsersService } from '../users.service';
+import { UserFilterService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-users-dashboard',
@@ -11,14 +12,34 @@ import { UsersService } from '../users.service';
 })
 export class UsersDashboardComponent implements OnInit {
   users$!: Observable<any[]>;
+  filteredUsers$!: Observable<any[]>;
+  searchTerm = '';
+
   totalUsers = 0;
   currentPage = 1;
   pageSize = 6;
 
-  constructor(private userService: UsersService) {}
+  constructor(
+    private userService: UsersService,
+    private userFilterService: UserFilterService
+  ) {}
 
   ngOnInit(): void {
     this.loadUsers(this.currentPage);
+    this.filteredUsers$ = this.userFilterService.searchTerm$.pipe(
+      switchMap((term) => {
+        this.searchTerm = term;
+        return this.users$.pipe(
+          map((users) =>
+            users.filter((user) =>
+              `${user.first_name} ${user.last_name}`
+                .toLowerCase()
+                .includes(this.searchTerm.toLowerCase())
+            )
+          )
+        );
+      })
+    );
   }
 
   loadUsers(page: number) {
