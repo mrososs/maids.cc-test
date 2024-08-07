@@ -30,6 +30,7 @@ export class UsersDashboardComponent implements OnInit {
       this.loadUsers(this.currentPage);
     });
     this.loadUsers(this.currentPage);
+    ///
   }
 
   loadUsers(page: number) {
