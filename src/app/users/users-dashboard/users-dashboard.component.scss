@@ -1,6 +1,11 @@
 .example-card {
   max-width: 100%;
   margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.example-card:hover {
+  transform: scale(1.05);
 }
 
 .example-header-image {

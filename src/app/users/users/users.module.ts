@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HighlightDirective } from '../../directives/highlight.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HighlightDirective } from '../../directives/highlight.directive';
   ],
   imports: [
     CommonModule,
+
     MatCardModule,
     MatButtonModule,
     HttpClientModule,

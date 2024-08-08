@@ -4,11 +4,20 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { UsersService } from '../users.service';
 import { UserFilterService } from '../../shared/shared.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-users-dashboard',
   templateUrl: './users-dashboard.component.html',
   styleUrls: ['./users-dashboard.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.5s ease-in', style({ opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 /**
  * Represents the UsersDashboardComponent class.
