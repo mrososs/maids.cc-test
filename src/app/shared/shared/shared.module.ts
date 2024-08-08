@@ -6,10 +6,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBar } from '@angular/material/progress-bar';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from '../../loader/interceptor.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, SideMenuComponent],
-  imports: [CommonModule, MatButtonModule, MatProgressBar],
+  imports: [CommonModule, MatButtonModule, MatProgressBar,RouterModule],
   exports: [HeaderComponent, SideMenuComponent],
   providers: [
     {

@@ -14,22 +14,19 @@ export class UsersService {
     const url = `${this.apiUrl}?page=${page}`;
 
     return this.http.get<any>(url).pipe(
-      tap((response) => console.log(response)), // Log the response
       catchError((error) => {
         console.error(error);
         return of({ data: [], total: 0 });
       })
     );
   }
-  getUserDetails(id:any):Observable<any>{
+  getUserDetails(id: number): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<any>(url).pipe(
-      tap((response) => console.log(response)), // Log the response
       catchError((error) => {
         console.error(error);
-        return of({ data: [], total: 0 });
+        return of({ data: [] });
       })
     );
   }
 }
-

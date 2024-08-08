@@ -14,7 +14,6 @@ export class UsersDashboardComponent implements OnInit {
   users$!: Observable<any[]>;
   filteredUsers$!: Observable<any[]>;
   searchTerm = '';
-
   totalUsers = 0;
   currentPage = 1;
   pageSize = 6;
@@ -30,14 +29,13 @@ export class UsersDashboardComponent implements OnInit {
       this.loadUsers(this.currentPage);
     });
     this.loadUsers(this.currentPage);
-    ///
   }
 
   loadUsers(page: number) {
     this.users$ = this.userService.getUsers(page).pipe(
       map((response: any) => {
         this.totalUsers = response.total;
-        return response.data; // return the array of users
+        return response.data;
       })
     );
 
