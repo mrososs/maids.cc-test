@@ -8,7 +8,7 @@
             class="example-header-image"
             [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')' }"
           ></div>
-          <mat-card-title>
+          <mat-card-title appHighlight="lightblue">
             {{ user.first_name }} {{ user.last_name }}
           </mat-card-title>
           <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>

@@ -12,9 +12,14 @@ import { InterceptorService } from '../../loader/interceptor.service';
 import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 @NgModule({
-  declarations: [UsersDashboardComponent, UserDetailsComponent],
+  declarations: [
+    UsersDashboardComponent,
+    UserDetailsComponent,
+    HighlightDirective,
+  ],
   imports: [
     CommonModule,
     MatCardModule,
