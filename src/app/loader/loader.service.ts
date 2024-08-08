@@ -1,3 +1,6 @@
+/**
+ * LoaderService class responsible for managing the loading state of the application.
+ */
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 

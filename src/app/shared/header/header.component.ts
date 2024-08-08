@@ -7,6 +7,10 @@ import { LoaderService } from '../../loader/loader.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
+/**
+ * Represents the HeaderComponent class.
+ * This component is responsible for displaying the header of the application.
+ */
 export class HeaderComponent {
   constructor(private userFilterService: UserFilterService,public loaderService:LoaderService) {}
 

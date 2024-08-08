@@ -10,6 +10,10 @@ import { UserFilterService } from '../../shared/shared.service';
   templateUrl: './users-dashboard.component.html',
   styleUrls: ['./users-dashboard.component.scss'],
 })
+/**
+ * Represents the UsersDashboardComponent class.
+ * This component is responsible for displaying the users dashboard and handling user interactions.
+ */
 export class UsersDashboardComponent implements OnInit {
   users$!: Observable<any[]>;
   filteredUsers$!: Observable<any[]>;

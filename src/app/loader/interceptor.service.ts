@@ -1,3 +1,7 @@
+/**
+ * InterceptorService class that implements the HttpInterceptor interface.
+ * This service is responsible for intercepting HTTP requests and handling loader service.
+ */
 import { LoaderService } from './loader.service';
 import {
   HttpEvent,

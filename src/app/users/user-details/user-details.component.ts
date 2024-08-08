@@ -1,3 +1,7 @@
+/**
+ * Represents the UserDetailsComponent class.
+ * This component is responsible for displaying the details of a user.
+ */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../users.service';
