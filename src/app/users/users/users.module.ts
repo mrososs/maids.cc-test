@@ -9,6 +9,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InterceptorService } from '../../loader/interceptor.service';
+import { RouterModule } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [UsersDashboardComponent, UserDetailsComponent],
@@ -20,6 +23,9 @@ import { InterceptorService } from '../../loader/interceptor.service';
     MatPaginatorModule,
     ReactiveFormsModule,
     AsyncPipe,
+    RouterModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [
     UsersService,

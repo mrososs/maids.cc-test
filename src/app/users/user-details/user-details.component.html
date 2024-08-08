@@ -1,1 +1,38 @@
-<p>user-details works!</p>
+<section class="container user-details mt-3">
+  <mat-card class="example-card" appearance="outlined">
+    <div class="row">
+      <mat-card-header class="col-12 col-md-6">
+        <div
+          mat-card-avatar
+          class="example-header-image"
+          [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')' }"
+        ></div>
+        <mat-card-title
+          >{{ user.first_name }} {{ user.last_name }}</mat-card-title
+        >
+        <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+        <!-- Assuming job_title is available -->
+      </mat-card-header>
+      <mat-card-actions class="col-12 col-md-6">
+        <button mat-button class="me-4" disabled>Update Photo</button>
+        <button mat-button disabled>Settings</button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+  <form class="mt-3 form-control">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width w-100">
+          <mat-label>First Name</mat-label>
+          <input type="text" matInput [value]="user.first_name" readonly />
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="example-full-width w-100">
+          <mat-label>Last Name</mat-label>
+          <input type="text" matInput [value]="user.last_name" readonly />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</section>

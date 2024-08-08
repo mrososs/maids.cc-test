@@ -1,0 +1,24 @@
+.user-details {
+  //   margin: 0 auto;
+
+  .example-card {
+    max-width: 100%;
+    padding: 2rem;
+  }
+
+  .example-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+  }
+  button {
+    background-color: bisque;
+  }
+}
+@media screen and (max-width:765px) {
+    .example-card {
+    
+    padding-left: 30% !important;
+  }
+
+    
+}
